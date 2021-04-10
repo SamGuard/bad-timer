@@ -58,7 +58,7 @@ class MyServer(BaseHTTPRequestHandler):
                 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
             """, "utf-8"))
             self.wfile.write(bytes("<body>", "utf-8"))
-            self.wfile.write(bytes("""<p id='num' style='font-family: "Roboto Condensed", "sans-serif"; font-size: 50px; color: white;'></p>""", "utf-8"))
+            self.wfile.write(bytes("""<p id='num' style='font-family: "Roboto Condensed", "sans-serif"; font-size: 256px; color: white;'></p>""", "utf-8"))
             self.wfile.write(bytes("""
             <script>
                 function update(){
