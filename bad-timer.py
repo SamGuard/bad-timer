@@ -3,6 +3,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 from os import environ
 
+print("starting server")
 hostName = "localhost"
 try:
     serverPort = int(environ['PORT'])
