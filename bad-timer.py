@@ -3,14 +3,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 from os import environ
 
-print("starting server")
-hostName = "localhost"
-try:
-    serverPort = int(environ['PORT'])
-except:
-    serverPort = 3000
-print(serverPort)
-outputString = "24:00:00"
+
+
 
 
 def main():
@@ -82,16 +76,20 @@ class MyServer(BaseHTTPRequestHandler):
 
 
 
-          
-timer = threading.Thread(target=main, daemon=True)
-timer.start() 
-webServer = HTTPServer((hostName, serverPort), MyServer)
-print("Server started http://%s:%s" % (hostName, serverPort))
+if __name__ == '__main__':
+    print("starting server")
+    hostName = "localhost"
+    serverPort = int(environ.get('PORT', 5000)) 
+    outputString = "24:00:00"  
+    timer = threading.Thread(target=main, daemon=True)
+    timer.start() 
+    webServer = HTTPServer((hostName, serverPort), MyServer)
+    print("Server started http://%s:%s" % (hostName, serverPort))
 
-try:
-    webServer.serve_forever()
-except KeyboardInterrupt:
-    pass
+    try:
+        webServer.serve_forever()
+    except KeyboardInterrupt:
+        pass
 
-webServer.server_close()
-print("Server stopped.")
+    webServer.server_close()
+    print("Server stopped.")
