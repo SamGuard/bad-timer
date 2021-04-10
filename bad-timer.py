@@ -11,7 +11,7 @@ def main():
     global outputString
     now = datetime.datetime.today()
     #end = datetime.datetime(2021, 4, 9, 19, 59, 45)
-    end = datetime.datetime(2021, 4, 11, 12, 0, 0)
+    end = datetime.datetime(2021, 4, 11, 11, 0, 0)
 
 
     diff = diff = (end - now)
