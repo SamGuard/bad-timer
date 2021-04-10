@@ -78,7 +78,7 @@ class MyServer(BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     print("starting server")
-    hostName = "localhost"
+    hostName = "0.0.0.0"
     serverPort = int(environ.get('PORT', 5000)) 
     outputString = "24:00:00"  
     timer = threading.Thread(target=main, daemon=True)
