@@ -4,7 +4,10 @@ import threading
 from os import environ
 
 hostName = "localhost"
-serverPort = int(environ['PORT'])
+try:
+    serverPort = int(environ['PORT'])
+except:
+    serverPort = 3000
 print(serverPort)
 outputString = "24:00:00"
 
@@ -78,16 +81,16 @@ class MyServer(BaseHTTPRequestHandler):
 
 
 
-if __name__ == "__main__":       
-    timer = threading.Thread(target=main, daemon=True)
-    timer.start() 
-    webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Server started http://%s:%s" % (hostName, serverPort))
+          
+timer = threading.Thread(target=main, daemon=True)
+timer.start() 
+webServer = HTTPServer((hostName, serverPort), MyServer)
+print("Server started http://%s:%s" % (hostName, serverPort))
 
-    try:
-        webServer.serve_forever()
-    except KeyboardInterrupt:
-        pass
+try:
+    webServer.serve_forever()
+except KeyboardInterrupt:
+    pass
 
-    webServer.server_close()
-    print("Server stopped.")
+webServer.server_close()
+print("Server stopped.")
