@@ -11,7 +11,7 @@ def main():
     global outputString
     now = datetime.datetime.today()
     #end = datetime.datetime(2021, 4, 9, 19, 59, 45)
-    end = datetime.datetime(2021, 4, 10, 12, 0, 0)
+    end = datetime.datetime(2021, 4, 11, 12, 0, 0)
 
 
     diff = diff = (end - now)
@@ -53,9 +53,12 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         if(self.path == "/"):
             self.wfile.write(bytes("<html><head><title>https://pythonbasics.org</title></head>", "utf-8"))
-            self.wfile.write(bytes("""<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>""", "utf-8"))
+            self.wfile.write(bytes("""
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+                <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
+            """, "utf-8"))
             self.wfile.write(bytes("<body>", "utf-8"))
-            self.wfile.write(bytes("""<p id='num' style="font-family: 'Roboto', sans-serif"; 15px'></p>""", "utf-8"))
+            self.wfile.write(bytes("""<p id='num' style='font-family: "Roboto Condensed", "sans-serif"; font-size: 50px; color: white;'></p>""", "utf-8"))
             self.wfile.write(bytes("""
             <script>
                 function update(){
