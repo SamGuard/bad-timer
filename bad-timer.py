@@ -4,7 +4,7 @@ import threading
 import os
 
 hostName = "localhost"
-serverPort = os.environ.get('PORT', 3000)
+serverPort = os.environ.get('PORT', 17995)
 print(serverPort)
 outputString = "24:00:00"
 
