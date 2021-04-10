@@ -1,9 +1,10 @@
 import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
+import os
 
 hostName = "localhost"
-serverPort = 3000
+serverPort = os.environ["PORT"]
 outputString = "24:00:00"
 
 
