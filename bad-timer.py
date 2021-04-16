@@ -22,9 +22,10 @@ def main():
         if (diffNew is not diff):
             timeLeft = diff.total_seconds()
             diff = diffNew
-            hours = int(timeLeft // (60*60))
-            minutes = int((timeLeft - hours * 60 * 60) // (60))
-            seconds = int((timeLeft - hours * 60 * 60 - minutes * 60))
+            days = int(timeLeft // (60*60*24))
+            hours = int((timeLeft - days *60*60*24) // (60*60))
+            minutes = int(((timeLeft - days *60*60*24) - hours * 60 * 60) // (60))
+            seconds = int(((timeLeft - days *60*60*24) - hours * 60 * 60 - minutes * 60))
             
             hours = str(hours)
             if(len(hours) < 2):
