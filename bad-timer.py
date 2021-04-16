@@ -27,6 +27,7 @@ def main():
             minutes = int(((timeLeft - days *60*60*24) - hours * 60 * 60) // (60))
             seconds = int(((timeLeft - days *60*60*24) - hours * 60 * 60 - minutes * 60))
             
+            days = str(days)
             hours = str(hours)
             if(len(hours) < 2):
                 hours = "0"+hours
@@ -40,7 +41,7 @@ def main():
                 seconds = "0"+seconds
             
 
-            s = hours + ":" + minutes + ":" + seconds
+            s = days + ":" + hours + ":" + minutes + ":" + seconds
             #print(s)
             outputString = s
 
@@ -59,7 +60,7 @@ class MyServer(BaseHTTPRequestHandler):
                 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
             """, "utf-8"))
             self.wfile.write(bytes("<body>", "utf-8"))
-            self.wfile.write(bytes("""<p id='num' style='font-family: "Roboto Condensed", "sans-serif"; font-size: 256px; color: white;'></p>""", "utf-8"))
+            self.wfile.write(bytes("""<p id='num' style='font-family: "Roboto Condensed", "sans-serif"; font-size: 256px; color: black;'></p>""", "utf-8"))
             self.wfile.write(bytes("""
             <script>
                 function update(){
