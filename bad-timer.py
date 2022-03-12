@@ -42,7 +42,8 @@ def main():
                 seconds = "0"+seconds
             
 
-            s = days + ":" + hours + ":" + minutes + ":" + seconds
+            #s = days + ":" + hours + ":" + minutes + ":" + seconds
+            s = hours + ":" + minutes + ":" + seconds
             #print(s)
             outputString = s
 
