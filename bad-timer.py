@@ -10,8 +10,9 @@ from os import environ
 def main():
     global outputString
     now = datetime.datetime.today()
-    #end = datetime.datetime(2021, 4, 9, 19, 59, 45)
-    end = datetime.datetime(2023, 5, 30, 23, 59, 59)
+    #bath hack 2021 end date: end = datetime.datetime(2021, 4, 9, 19, 59, 45)
+    #uni end date: end = datetime.datetime(2023, 5, 30, 23, 59, 59)
+    end = datetime.datetime(2022, 3, 12, 12, 0, 0)
 
 
     diff = diff = (end - now)
